@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/tempos-logo.jpg" type="image/png">
+<title>Tempos - Organização na Palma da Sua Mão</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+  /* Reset básico */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Montserrat' }
+
+  body { line-height:1.7; color:#333; background:#f4f4f4; }
+
+  a { text-decoration:none; color:#FF0049; }
+
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+/* ================= HEADER ================= */
+
+.headerBack{
+background-image: url(img/Banner\ Hotsite\(1\)\(1\).png);
+height: 450px;
+margin-top: 100px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5rem;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.header-translucido {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.logo img {
+  height: 3rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+  padding: 1rem 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.3rem;
+  background-color: #FF0048;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FF0048;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: #555;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FF0048;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
+
+  section {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+  }
+
+
+h1{
+  color: #FF0049;
+}
+
+.sobrenos{
+  color: #FF0049;
+}
+
+.sobrenosclass{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* ================= SOBRE NÓS ================= */
+#sobre-nos {
+  color: #000000;
+}
+
+.sobre-nos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+ .sobre-nos-title {
+  color: #FF0049;
+} 
+
+.sobre-nos-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.sobre-nos-texto {
+  flex: 1;
+  font-size: 1.8rem;
+  line-height: 1.7;
+  text-align: justify;
+
+}
+
+.sobre-nos-texto p {
+  margin-bottom: 1.5rem;
+}
+
+.sobre-nos-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 140px;
+}
+
+.team-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.integrantes{
+color: #FF0049;
+}
+
+  h2 {
+    color:#ffffff;
+    margin-bottom: 30px;
+    text-align:center;
+    font-size:2rem;
+  }
+
+  .comofunciona{
+    padding-top: 50px;
+  }
+
+  h3 { margin-bottom: 15px; color:#333; }
+
+  p { margin-bottom: 25px; font-size:1.1rem; }
+
+  /* IMAGENS DO APP - subir levemente no hover */
+  .screenshots img {
+    width:250px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+    margin-bottom: 50px;
+  }
+
+  .screenshots img:hover {
+    transform: translateY(-5px);
+  }
+
+  .screenshots {
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-bottom: 90px;
+    flex-wrap:wrap;
+    
+  }
+
+  .features {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:50px;
+    margin-bottom: 50px;
+  }
+
+  .feature {
+    
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    background-color: #f4f4f4;
+  }
+
+
+  .feature:hover { transform: translateY(-5px); }
+
+  .background{
+    background-color: #FF0049;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  /* Cards de integrantes */
+  .team {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    margin-top:30px;
+  }
+
+  .member {
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+
+  .member:hover { transform: translateY(-5px); }
+
+  .member img {
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    transition: transform 0.3s;
+  }
+
+  .member img:hover {
+    transform: translateY(-5px);
+  }
+
+  .member h4 { margin-bottom:5px; }
+  .member a {
+    display:block;
+    margin-top:5px;
+    color:#FF0049;
+    font-size:0.9rem;
+  }
+
+  .team .member:nth-child(5) {
+    grid-column-start: 1;
+  }
+
+  /* BOTÃO FINAL */
+  .final-btn {
+    text-align:center;
+    margin-top:40px;
+  }
+
+  .final-btn a {
+    background:#FF0049;
+    color:white;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:1.2rem;
+    font-weight:bold;
+    display:inline-block;
+    transition: 0.3s;
+  }
+
+  .final-btn a:hover {
+    background:#ff6f9a;
+  }
+
+  footer {
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:70px;
+  }
+
+  @media(max-width:600px){
+    .hero-header { padding:60px 10px; }
+    .screenshots img { width:80%; }
+    .member { padding:20px; }
+  }
+</style>
+</head>
+<body>
+
+ <header class="header">
+        <div class="logo">
+            <img src="img/logo-removeBG-copia.png" alt="Logo Tempos">
+        </div>
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#sobre-nos" class="nav-link">Sobre Nos</a></li>
+                <li class="nav-item"><a href="#sistema" class="nav-link">Sistema</a></li>
+                <li class="nav-item"><a href="#imagens" class="nav-link">Imagens</a></li>
+                <li class="nav-item"><a href="#integrantes" class="nav-link">Integrantes</a></li>
+            </ul>
+    </header>
+<div class="headerBack">
+
+</div>
+
+<header class="hero-header">
+<div class="final-btn">
+  <a href="https://twomelo.github.io/TCC-2/" target="_blank">Saiba Mais</a>
+</div>  
+</header>
+
+<!-- SOBRE NÓS -->
+    <section id="sobre-nos">
+    <main class="sobre-nos-container">
+        <h2 class="sobre-nos-title">Sobre Nós</h2>
+
+        <div class="sobre-nos-content">
+            <div class="sobre-nos-texto">
+                <p>Somos um grupo de estudantes apaixonados por tecnologia e inovação. Nosso objetivo é criar soluções digitais que otimizem a rotina acadêmica, ajudando estudantes a organizar suas atividades, tarefas e horários de maneira eficiente.
+                </p>
+                <p>
+                  O aplicativo Inform foi desenvolvido como projeto de TCC, integrando design responsivo e gestão de tempo para oferecer uma experiência intuitiva e prática aos usuários.
+                </p>
+            </div>
+
+            <div class="sobre-nos-image">
+                <img src="img/team.png" alt="Equipe Tempos" class="team-image">
+            </div>
+        </div>
+    </main>
+</section>
+
+<div class="background">
+<section id="sistema"> 
+  <h2 class="comofunciona">Como o Sistema Funciona</h2> 
+  <div class="features"> <div class="feature"> <h3>Administração de Serviços</h3> 
+    <p>Administradores têm total controle sobre as atividades do sistema, podendo acompanhar o progresso de tarefas, gerenciar horários e monitorar o desempenho dos usuários.</p> 
+  </div> <div class="feature"> <h3>Gestão de Tarefas</h3> <p>O usuário pode criar, editar e organizar suas tarefas diárias. É possível definir prioridades, prazos e receber lembretes automáticos para não perder nenhum compromisso.</p> </div> <div class="feature"> <h3>Acompanhamento Visual</h3> <p>O sistema oferece uma visão clara das atividades concluídas, pendentes e em andamento, permitindo maior controle e planejamento das tarefas do dia a dia.</p> </div> <div class="feature"> <h3>Notificações e Alertas</h3> <p>O usuário recebe notificações personalizadas sobre prazos, eventos importantes e alterações nas atividades, mantendo-se sempre atualizado e organizado.</p> </div> <div class="feature"> <h3>Relatórios Personalizados</h3> <p>O sistema gera relatórios detalhados sobre o desempenho e atividades dos usuários, permitindo identificar padrões, otimizar processos e tomar decisões mais estratégicas.</p> </div> <div class="feature"> <h3>Integração com Calendário</h3> <p>O aplicativo se integra com calendários externos, sincronizando eventos, tarefas e lembretes para que o usuário tenha todas as informações em um só lugar, facilitando a organização diária.</p> </div> </div> </section>
+
+<section id="imagens">
+  <h2>Imagens do Aplicativo</h2>
+  <div class="screenshots">
+    <img src="img/img1.jpeg" alt="Tela do app 1">
+    <img src="img/img2.jpeg" alt="Tela do app 2">
+    <img src="img/img4.jpg" alt="Tela do app 3">
+    <img src="img/perfil.jpg" alt="Tela do app 4">
+  </div>
+</section>
+
+</div>
+
+<section id="integrantes">
+  <h2 class="integrantes">Integrantes</h2>
+  <div class="team">
+    <div class="member">
+      <img src="img/emily.jpeg" alt="Integrante 1">
+      <h4>Emily Maria Ribeiro</h4>
+      <a href="mailto:emilyribeiro@outlook.com">emilyribeiro@outlook.com</a>
+    </div>
+    <div class="member">
+      <img src="img/gustavo.jpeg" alt="Integrante 2">
+      <h4>Gustavo Carvalho Silva</h4>
+      <a href="mailto:gustavocsilva.dev@gmail.com">gustavocsilva.dev@gmail.com</a>
+    </div>
+    <div class="member">
+      <img src="img/heitor.jpeg" alt="Integrante 3">
+      <h4>Heitor Resende Santiago</h4>
+      <a href="mailto:heitor.santiagodev@gmail.com">heitor.santiagodev@gmail.com</a>
+    </div>
+    <div class="member">
+      <img src="img/maria.jpeg" alt="Integrante 4">
+      <h4>Maria Alice Ramos</h4>
+      <a href="mailto:mariarpiress@gmail.com">mariarpiress@gmail.com</a>
+    </div>
+    <div class="member">
+      <img src="img/melo.jpeg" alt="Integrante 5">
+      <h4>Murilo Melo Ramalho</h4>
+      <a href="mailto:mmeloramalho@gmail.com">mmeloramalho@gmail.com</a>
+    </div>
+    <div class="member">
+      <img src="img/nat.jpeg" alt="Integrante 6">
+      <h4>Nathalia Mariana da Silva</h4>
+      <a href="mailto:nathh.mariana@outlook.com">nathh.mariana@outlook.com</a>
+    </div>
+    <div class="member">
+      <img src="img/yas.jpeg" alt="Integrante 7">
+      <h4>Yasmim de Carvalho</h4>
+      <a href="mailto:yasmim.c.silva16@aluno.senai.br">yasmim.c.silva16@aluno.senai.br</a>
+    </div>
+    <div class="member">
+      <img src="img/victor.jpg" alt="Integrante 8">
+      <h4>Victor Viana de Souza</h4>
+      <a href="mailto:victorsouza0810@gmail.com">victorsouza0810@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOTÃO FINAL -->
+
+
+<footer>
+  <p>&copy; 2025 TEMPOS - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
