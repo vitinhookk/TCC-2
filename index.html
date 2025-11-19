@@ -25,8 +25,15 @@
 
 .headerBack{
 background-image: url(img/Banner\ Hotsite\(1\)\(1\).png);
-height: 450px;
-margin-top: 100px;
+background-size: contain;
+background-position: center center;
+background-repeat: no-repeat;
+background-color: transparent;
+height: 600px;
+margin: 0;
+width: 100%;
+padding: 0;
+display: block;
 }
 
 .header {
@@ -107,6 +114,8 @@ margin-top: 100px;
 .hamburger {
   display: none;
   cursor: pointer;
+  flex-direction: column;
+  z-index: 101;
 }
 
 .bar {
@@ -116,6 +125,7 @@ margin-top: 100px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
   background-color: #333;
+  border-radius: 3px;
 }
 
   section {
@@ -331,10 +341,239 @@ color: #FF0049;
     margin-top:70px;
   }
 
-  @media(max-width:600px){
-    .hero-header { padding:60px 10px; }
-    .screenshots img { width:80%; }
-    .member { padding:20px; }
+  /* ================= RESPONSIVIDADE ================= */
+  
+  /* Desktop - banner sem cortes e sem bordas */
+  @media (min-width: 1025px) {
+    .headerBack {
+      background-size: contain;
+      background-position: center center;
+      height: 650px;
+      margin: 0;
+      padding: 0;
+      margin-top: 0;
+    }
+  }
+  
+  /* Tablets */
+  @media (max-width: 1024px) {
+    .header {
+      padding: 1.5rem 3rem;
+    }
+    
+    .nav-menu {
+      gap: 2rem;
+    }
+    
+    .sobre-nos-content {
+      gap: 3rem;
+    }
+    
+    .sobre-nos-image {
+      padding-left: 0;
+    }
+    
+    .headerBack {
+      height: 500px;
+    }
+  }
+  
+  /* Tablets pequenos e mobile grande */
+  @media (max-width: 768px) {
+    .header {
+      padding: 1rem 2rem;
+    }
+    
+    .logo img {
+      height: 2.5rem;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background-color: #ffffff;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      padding: 2rem 0;
+      gap: 0;
+    }
+    
+    .nav-menu.active {
+      left: 0;
+    }
+    
+    .nav-item {
+      margin: 1.5rem 0;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .sobre-nos-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .sobre-nos-texto {
+      font-size: 1.4rem;
+    }
+    
+    .sobre-nos-image {
+      padding-left: 0;
+    }
+    
+    .headerBack {
+      height: 300px;
+      margin-top: 70px;
+    }
+    
+    section {
+      margin: 50px auto;
+      padding: 0 15px;
+    }
+    
+    .features {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .screenshots {
+      gap: 20px;
+    }
+    
+    .screenshots img {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .team {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .header {
+      padding: 1rem;
+    }
+    
+    .logo img {
+      height: 2rem;
+    }
+    
+    .headerBack {
+      height: 250px;
+      margin-top: 60px;
+    }
+    
+    .hero-header {
+      padding: 40px 10px;
+    }
+    
+    .sobre-nos-texto {
+      font-size: 1.2rem;
+    }
+    
+    .team-image {
+      max-width: 100%;
+    }
+    
+    .screenshots img {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .member {
+      padding: 20px;
+    }
+    
+    .member img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .feature {
+      padding: 20px;
+    }
+    
+    .final-btn a {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    h3 {
+      font-size: 1.1rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Mobile pequeno */
+  @media (max-width: 480px) {
+    .header {
+      padding: 0.8rem;
+    }
+    
+    .headerBack {
+      height: 200px;
+    }
+    
+    .sobre-nos-texto {
+      font-size: 1.1rem;
+    }
+    
+    .screenshots {
+      gap: 15px;
+    }
+    
+    .screenshots img {
+      max-width: 200px;
+    }
+    
+    .team {
+      grid-template-columns: 1fr;
+    }
+    
+    .team .member:nth-child(5) {
+      grid-column-start: auto;
+    }
+    
+    section {
+      margin: 30px auto;
+      padding: 0 10px;
+    }
   }
 </style>
 </head>
@@ -351,6 +590,12 @@ color: #FF0049;
                 <li class="nav-item"><a href="#imagens" class="nav-link">Imagens</a></li>
                 <li class="nav-item"><a href="#integrantes" class="nav-link">Integrantes</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
 <div class="headerBack">
 
@@ -454,6 +699,36 @@ color: #FF0049;
 <footer>
   <p>&copy; 2025 TEMPOS - Todos os direitos reservados</p>
 </footer>
+
+<script>
+  // Menu hambúrguer
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Fechar menu ao clicar em um link
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+
+  // Header translúcido ao fazer scroll
+  const header = document.querySelector(".header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("header-translucido");
+    } else {
+      header.classList.remove("header-translucido");
+    }
+  });
+</script>
 
 </body>
 </html>
